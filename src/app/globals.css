@@ -1,0 +1,122 @@
+@import 'leaflet/dist/leaflet.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 84% 5%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 222 84% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 5%;
+
+    --primary: 149 73% 37%; /* #18a558 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 145 63% 22%; /* #116530 */
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 147 64% 92%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 149 73% 37%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 130 88% 98%; /* #f0fdf4 */
+    --sidebar-foreground: 222 84% 5%;
+    --sidebar-primary: 149 73% 37%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 130 88% 95%; /* Lighter green for accent */
+    --sidebar-accent-foreground: 149 73% 37%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-ring: 149 73% 37%;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 331 87% 55%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 270 85% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 331 87% 55%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 224 71% 4%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 331 87% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 11%;
+    --sidebar-accent-foreground: 331 87% 55%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 331 87% 55%;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    transition-property: color, background-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+}
+
+@layer components {
+    .country-list-popover [cmdk-list] {
+        scrollbar-width: thin;
+        scrollbar-color: hsl(var(--primary)) hsl(var(--muted));
+    }
+    .country-list-popover [cmdk-list]::-webkit-scrollbar {
+        width: 12px;
+    }
+    .country-list-popover [cmdk-list]::-webkit-scrollbar-track {
+        background: hsl(var(--muted) / 0.5);
+        border-radius: 6px;
+    }
+    .country-list-popover [cmdk-list]::-webkit-scrollbar-thumb {
+        background: hsl(var(--primary) / 0.7);
+        border-radius: 6px;
+        border: 3px solid transparent;
+        background-clip: content-box;
+    }
+    .country-list-popover [cmdk-list]::-webkit-scrollbar-thumb:hover {
+        background: hsl(var(--primary));
+        background-clip: content-box;
+    }
+}

@@ -1,0 +1,412 @@
+
+export interface CountryConfig {
+  label: string;
+  regionLabel: string;
+  regions: {
+    name: string;
+    cities: string[];
+  }[] | null;
+}
+
+export const locationData: Record<string, CountryConfig> = {
+  "afghanistan": {
+    label: "Afghanistan",
+    regionLabel: "Province",
+    regions: [
+      { name: "Kabul", cities: ["Kabul"] },
+      { name: "Herat", cities: ["Herat"] },
+      { name: "Balkh", cities: ["Mazar-i-Sharif"] },
+      { name: "Kandahar", cities: ["Kandahar"] },
+      { name: "Nangarhar", cities: ["Jalalabad"] },
+      { name: "Kunduz", cities: ["Kunduz"] },
+    ],
+  },
+  "argentina": {
+    label: "Argentina",
+    regionLabel: "Province",
+    regions: [
+      { name: "Buenos Aires", cities: ["Buenos Aires", "La Plata", "Mar del Plata", "Bahía Blanca"] },
+      { name: "Córdoba", cities: ["Córdoba", "Río Cuarto", "Villa María"] },
+      { name: "Santa Fe", cities: ["Rosario", "Santa Fe", "Rafaela"] },
+      { name: "Mendoza", cities: ["Mendoza", "San Rafael"] },
+      { name: "Tucumán", cities: ["San Miguel de Tucumán"] },
+      { name: "Salta", cities: ["Salta"] },
+    ],
+  },
+  "australia": {
+    label: "Australia",
+    regionLabel: "State / Territory",
+    regions: [
+      { name: "New South Wales", cities: ["Sydney", "Newcastle", "Wollongong", "Central Coast"] },
+      { name: "Victoria", cities: ["Melbourne", "Geelong", "Ballarat", "Bendigo"] },
+      { name: "Queensland", cities: ["Brisbane", "Gold Coast", "Sunshine Coast", "Cairns", "Townsville"] },
+      { name: "Western Australia", cities: ["Perth", "Fremantle", "Bunbury", "Mandurah"] },
+      { name: "South Australia", cities: ["Adelaide", "Mount Gambier"] },
+      { name: "Tasmania", cities: ["Hobart", "Launceston"] },
+      { name: "Australian Capital Territory", cities: ["Canberra"] },
+      { name: "Northern Territory", cities: ["Darwin", "Alice Springs"] },
+    ],
+  },
+  "bangladesh": {
+    label: "Bangladesh",
+    regionLabel: "Division",
+    regions: [
+        { name: "Dhaka", cities: ["Dhaka", "Gazipur", "Narayanganj", "Tangail"] },
+        { name: "Chittagong", cities: ["Chittagong", "Comilla", "Cox's Bazar", "Feni"] },
+        { name: "Khulna", cities: ["Khulna", "Jessore", "Kushtia"] },
+        { name: "Rajshahi", cities: ["Rajshahi", "Bogra"] },
+        { name: "Sylhet", cities: ["Sylhet"] },
+        { name: "Barisal", cities: ["Barisal"] },
+    ]
+  },
+  "brazil": {
+    label: "Brazil",
+    regionLabel: "State",
+    regions: [
+      { name: "São Paulo", cities: ["São Paulo", "Guarulhos", "Campinas", "Santos"] },
+      { name: "Rio de Janeiro", cities: ["Rio de Janeiro", "Niterói", "Duque de Caxias", "Nova Iguaçu"] },
+      { name: "Bahia", cities: ["Salvador", "Feira de Santana", "Vitória da Conquista"] },
+      { name: "Minas Gerais", cities: ["Belo Horizonte", "Uberlândia", "Contagem"] },
+      { name: "Paraná", cities: ["Curitiba", "Londrina", "Maringá"] },
+      { name: "Rio Grande do Sul", cities: ["Porto Alegre", "Caxias do Sul"] },
+    ],
+  },
+  "canada": {
+    label: "Canada",
+    regionLabel: "Province / Territory",
+    regions: [
+      { name: "Ontario", cities: ["Toronto", "Ottawa", "Mississauga", "Hamilton", "London", "Brampton"] },
+      { name: "Quebec", cities: ["Montreal", "Quebec City", "Laval", "Gatineau"] },
+      { name: "British Columbia", cities: ["Vancouver", "Victoria", "Surrey", "Burnaby", "Richmond"] },
+      { name: "Alberta", cities: ["Calgary", "Edmonton", "Red Deer"] },
+      { name: "Manitoba", cities: ["Winnipeg", "Brandon"] },
+      { name: "Saskatchewan", cities: ["Saskatoon", "Regina"] },
+      { name: "Nova Scotia", cities: ["Halifax", "Sydney"] },
+    ],
+  },
+  "china": {
+    label: "China",
+    regionLabel: "Province / Municipality",
+    regions: [
+      { name: "Beijing", cities: ["Beijing"] },
+      { name: "Shanghai", cities: ["Shanghai"] },
+      { name: "Guangdong", cities: ["Guangzhou", "Shenzhen", "Dongguan", "Foshan"] },
+      { name: "Zhejiang", cities: ["Hangzhou", "Ningbo", "Wenzhou"] },
+      { name: "Sichuan", cities: ["Chengdu", "Chongqing"] },
+      { name: "Tianjin", cities: ["Tianjin"] },
+    ],
+  },
+  "egypt": {
+    label: "Egypt",
+    regionLabel: "Governorate",
+    regions: [
+        { name: "Cairo", cities: ["Cairo"] },
+        { name: "Alexandria", cities: ["Alexandria"] },
+        { name: "Giza", cities: ["Giza"] },
+        { name: "Qalyubia", cities: ["Shubra El-Kheima"] },
+        { name: "Port Said", cities: ["Port Said"] },
+        { name: "Suez", cities: ["Suez"] },
+    ]
+  },
+  "france": {
+    label: "France",
+    regionLabel: "Region",
+    regions: [
+      { name: "Île-de-France", cities: ["Paris", "Versailles", "Saint-Denis", "Boulogne-Billancourt"] },
+      { name: "Provence-Alpes-Côte d'Azur", cities: ["Marseille", "Nice", "Cannes", "Toulon"] },
+      { name: "Auvergne-Rhône-Alpes", cities: ["Lyon", "Grenoble", "Saint-Étienne", "Clermont-Ferrand"] },
+      { name: "Occitanie", cities: ["Toulouse", "Montpellier", "Nîmes"] },
+      { name: "Hauts-de-France", cities: ["Lille", "Amiens", "Roubaix"] },
+      { name: "Nouvelle-Aquitaine", cities: ["Bordeaux", "Limoges", "Poitiers"] },
+    ],
+  },
+  "germany": {
+    label: "Germany",
+    regionLabel: "State",
+    regions: [
+      { name: "Berlin", cities: ["Berlin"] },
+      { name: "Bavaria", cities: ["Munich", "Nuremberg", "Augsburg"] },
+      { name: "Hamburg", cities: ["Hamburg"] },
+      { name: "North Rhine-Westphalia", cities: ["Cologne", "Düsseldorf", "Dortmund", "Essen"] },
+      { name: "Hesse", cities: ["Frankfurt", "Wiesbaden", "Darmstadt"] },
+      { name: "Baden-Württemberg", cities: ["Stuttgart", "Mannheim", "Karlsruhe"] },
+      { name: "Saxony", cities: ["Leipzig", "Dresden"] },
+    ],
+  },
+  "india": {
+    label: "India",
+    regionLabel: "State / UT",
+    regions: [
+      { name: "Andaman and Nicobar Islands", cities: ["Port Blair", "Diglipur", "Mayabunder", "Rangat"] },
+      { name: "Andhra Pradesh", cities: ["Visakhapatnam", "Vijayawada", "Guntur", "Nellore", "Tirupati", "Kurnool", "Kakinada", "Rajahmundry", "Anantapur", "Kadapa", "Eluru", "Ongole", "Chittoor", "Srikakulam"] },
+      { name: "Arunachal Pradesh", cities: ["Itanagar", "Tawang", "Naharlagun", "Pasighat", "Ziro", "Bomdila"] },
+      { name: "Assam", cities: ["Guwahati", "Dispur", "Dibrugarh", "Silchar", "Jorhat", "Tezpur", "Nagaon", "Tinsukia", "Bongaigaon"] },
+      { name: "Bihar", cities: ["Patna", "Gaya", "Bhagalpur", "Muzaffarpur", "Purnia", "Darbhanga", "Arrah", "Begusarai", "Katihar", "Munger"] },
+      { name: "Chandigarh", cities: ["Chandigarh"] },
+      { name: "Chhattisgarh", cities: ["Raipur", "Bhilai", "Bilaspur", "Korba", "Durg", "Raigarh", "Jagdalpur", "Ambikapur"] },
+      { name: "Dadra and Nagar Haveli and Daman and Diu", cities: ["Daman", "Diu", "Silvassa", "Amli"] },
+      { name: "Delhi", cities: ["Delhi", "New Delhi", "Noida", "Ghaziabad", "Faridabad", "Gurugram"] },
+      { name: "Goa", cities: ["Panaji", "Margao", "Vasco da Gama", "Mapusa", "Ponda", "Bicholim"] },
+      { name: "Gujarat", cities: ["Ahmedabad", "Surat", "Vadodara", "Rajkot", "Bhavnagar", "Jamnagar", "Gandhinagar", "Junagadh", "Anand", "Navsari", "Morbi", "Nadiad"] },
+      { name: "Haryana", cities: ["Faridabad", "Gurgaon", "Panipat", "Ambala", "Yamunanagar", "Rohtak", "Hisar", "Karnal", "Sonipat", "Panchkula", "Bhiwani", "Sirsa"] },
+      { name: "Himachal Pradesh", cities: ["Shimla", "Dharamshala", "Manali", "Solan", "Kullu", "Mandi", "Palampur", "Chamba", "Una"] },
+      { name: "Jammu and Kashmir", cities: ["Srinagar", "Jammu", "Anantnag", "Baramulla", "Udhampur", "Kathua", "Sopore", "Pulwama"] },
+      { name: "Jharkhand", cities: ["Ranchi", "Jamshedpur", "Dhanbad", "Bokaro Steel City", "Deoghar", "Hazaribagh", "Giridih", "Ramgarh"] },
+      { name: "Karnataka", cities: ["Bengaluru", "Mysuru", "Hubballi-Dharwad", "Mangaluru", "Belagavi", "Davanagere", "Ballari", "Shivamogga", "Udupi", "Hassan", "Tumakuru", "Vijayapura"] },
+      { name: "Kerala", cities: ["Thiruvananthapuram", "Kochi", "Kozhikode", "Thrissur", "Kollam", "Kannur", "Alappuzha", "Kottayam", "Palakkad", "Malappuram"] },
+      { name: "Ladakh", cities: ["Leh", "Kargil"] },
+      { name: "Lakshadweep", cities: ["Kavaratti", "Agatti", "Minicoy", "Andrott"] },
+      { name: "Madhya Pradesh", cities: ["Indore", "Bhopal", "Jabalpur", "Gwalior", "Ujjain", "Sagar", "Rewa", "Satna", "Ratlam", "Dewas"] },
+      { name: "Maharashtra", cities: ["Mumbai", "Pune", "Nagpur", "Thane", "Nashik", "Aurangabad", "Solapur", "Navi Mumbai", "Amravati", "Kolhapur", "Akola", "Latur", "Dhule", "Jalgaon"] },
+      { name: "Manipur", cities: ["Imphal", "Churachandpur", "Thoubal", "Bishnupur"] },
+      { name: "Meghalaya", cities: ["Shillong", "Tura", "Jowai", "Nongpoh"] },
+      { name: "Mizoram", cities: ["Aizawl", "Lunglei", "Champhai", "Saiha"] },
+      { name: "Nagaland", cities: ["Kohima", "Dimapur", "Mokokchung", "Tuensang", "Wokha"] },
+      { name: "Odisha", cities: ["Bhubaneswar", "Cuttack", "Rourkela", "Puri", "Sambalpur", "Berhampur", "Balasore", "Bhadrak", "Baripada"] },
+      { name: "Puducherry", cities: ["Puducherry", "Karaikal", "Yanam", "Mahe"] },
+      { name: "Punjab", cities: ["Ludhiana", "Amritsar", "Jalandhar", "Patiala", "Bathinda", "Mohali", "Hoshiarpur", "Pathankot", "Moga", "Firozpur"] },
+      { name: "Rajasthan", cities: ["Jaipur", "Jodhpur", "Udaipur", "Kota", "Bikaner", "Ajmer", "Alwar", "Bhilwara", "Sikar", "Pali"] },
+      { name: "Sikkim", cities: ["Gangtok", "Namchi", "Pelling", "Mangan", "Gyalshing"] },
+      { name: "Tamil Nadu", cities: ["Chennai", "Coimbatore", "Madurai", "Tiruchirappalli", "Salem", "Tirunelveli", "Erode", "Vellore", "Thoothukudi", "Dindigul", "Thanjavur", "Hosur"] },
+      { name: "Telangana", cities: ["Hyderabad", "Warangal", "Nizamabad", "Karimnagar", "Ramagundam", "Khammam", "Mahbubnagar", "Adilabad", "Siddipet"] },
+      { name: "Tripura", cities: ["Agartala", "Udaipur", "Dharmanagar", "Kailasahar"] },
+      { name: "Uttar Pradesh", cities: ["Lucknow", "Kanpur", "Ghaziabad", "Agra", "Varanasi", "Meerut", "Prayagraj", "Noida", "Bareilly", "Gorakhpur", "Aligarh", "Moradabad", "Saharanpur", "Jhansi", "Mathura"] },
+      { name: "Uttarakhand", cities: ["Dehradun", "Haridwar", "Roorkee", "Haldwani", "Rishikesh", "Nainital", "Kashipur", "Mussoorie"] },
+      { name: "West Bengal", cities: ["Kolkata", "Howrah", "Asansol", "Siliguri", "Durgapur", "Darjeeling", "Haldia", "Kharagpur", "Bardhaman", "Malda"] },
+    ],
+  },
+  "indonesia": {
+    label: "Indonesia",
+    regionLabel: "Province",
+    regions: [
+        { name: "Jakarta", cities: ["Jakarta"] },
+        { name: "West Java", cities: ["Bandung", "Bekasi", "Depok", "Bogor"] },
+        { name: "East Java", cities: ["Surabaya", "Malang", "Sidoarjo"] },
+        { name: "Central Java", cities: ["Semarang", "Surakarta"] },
+        { name: "Banten", cities: ["Tangerang", "South Tangerang"] },
+        { name: "North Sumatra", cities: ["Medan"] },
+    ]
+  },
+  "italy": {
+    label: "Italy",
+    regionLabel: "Region",
+    regions: [
+      { name: "Lazio", cities: ["Rome"] },
+      { name: "Lombardy", cities: ["Milan", "Brescia", "Bergamo"] },
+      { name: "Campania", cities: ["Naples", "Salerno"] },
+      { name: "Piedmont", cities: ["Turin"] },
+      { name: "Sicily", cities: ["Palermo", "Catania"] },
+      { name: "Veneto", cities: ["Venice", "Verona", "Padua"] },
+    ],
+  },
+  "japan": {
+    label: "Japan",
+    regionLabel: "Prefecture",
+    regions: [
+      { name: "Tokyo", cities: ["Tokyo", "Shinjuku", "Shibuya"] },
+      { name: "Kanagawa", cities: ["Yokohama", "Kawasaki", "Sagamihara"] },
+      { name: "Osaka", cities: ["Osaka", "Sakai"] },
+      { name: "Aichi", cities: ["Nagoya"] },
+      { name: "Hokkaido", cities: ["Sapporo"] },
+      { name: "Fukuoka", cities: ["Fukuoka", "Kitakyushu"] },
+      { name: "Kyoto", cities: ["Kyoto"] },
+    ],
+  },
+  "mexico": {
+    label: "Mexico",
+    regionLabel: "State",
+    regions: [
+      { name: "Mexico City", cities: ["Mexico City"] },
+      { name: "Jalisco", cities: ["Guadalajara", "Zapopan", "Puerto Vallarta"] },
+      { name: "Nuevo León", cities: ["Monterrey", "San Pedro Garza García"] },
+      { name: "Baja California", cities: ["Tijuana", "Mexicali"] },
+      { name: "Quintana Roo", cities: ["Cancún", "Playa del Carmen"] },
+      { name: "Yucatán", cities: ["Mérida"] },
+    ],
+  },
+  "nigeria": {
+    label: "Nigeria",
+    regionLabel: "State",
+    regions: [
+      { name: "Lagos", cities: ["Lagos", "Ikeja", "Lekki"] },
+      { name: "Kano", cities: ["Kano"] },
+      { name: "Rivers", cities: ["Port Harcourt"] },
+      { name: "FCT", cities: ["Abuja"] },
+      { name: "Oyo", cities: ["Ibadan"] },
+      { name: "Kaduna", cities: ["Kaduna", "Zaria"] },
+    ],
+  },
+  "pakistan": {
+    label: "Pakistan",
+    regionLabel: "Province",
+    regions: [
+        { name: "Sindh", cities: ["Karachi", "Hyderabad", "Sukkur"] },
+        { name: "Punjab", cities: ["Lahore", "Faisalabad", "Rawalpindi", "Multan", "Gujranwala"] },
+        { name: "Khyber Pakhtunkhwa", cities: ["Peshawar", "Abbottabad", "Mardan"] },
+        { name: "Balochistan", cities: ["Quetta", "Gwadar"] },
+        { name: "Islamabad Capital Territory", cities: ["Islamabad"] },
+        { name: "Gilgit-Baltistan", cities: ["Gilgit", "Skardu"] },
+    ]
+  },
+  "philippines": {
+    label: "Philippines",
+    regionLabel: "Region",
+    regions: [
+        { name: "National Capital Region", cities: ["Manila", "Quezon City", "Makati", "Taguig", "Pasig"] },
+        { name: "Calabarzon", cities: ["Cavite", "Laguna", "Batangas", "Rizal"] },
+        { name: "Central Visayas", cities: ["Cebu City", "Mandaue", "Lapu-Lapu City"] },
+        { name: "Davao Region", cities: ["Davao City"] },
+        { name: "Western Visayas", cities: ["Iloilo City", "Bacolod"] },
+        { name: "Central Luzon", cities: ["Angeles", "San Fernando"] },
+    ]
+  },
+  "russia": {
+    label: "Russia",
+    regionLabel: "Federal Subject",
+    regions: [
+      { name: "Moscow", cities: ["Moscow"] },
+      { name: "Saint Petersburg", cities: ["Saint Petersburg"] },
+      { name: "Novosibirsk Oblast", cities: ["Novosibirsk"] },
+      { name: "Sverdlovsk Oblast", cities: ["Yekaterinburg"] },
+      { name: "Republic of Tatarstan", cities: ["Kazan"] },
+      { name: "Krasnodar Krai", cities: ["Krasnodar", "Sochi"] },
+    ],
+  },
+  "saudi-arabia": {
+    label: "Saudi Arabia",
+    regionLabel: "Province",
+    regions: [
+      { name: "Riyadh", cities: ["Riyadh"] },
+      { name: "Makkah", cities: ["Jeddah", "Mecca", "Ta'if"] },
+      { name: "Eastern Province", cities: ["Dammam", "Khobar", "Dhahran"] },
+      { name: "Madinah", cities: ["Medina"] },
+      { name: "Asir", cities: ["Abha"] },
+      { name: "Tabuk", cities: ["Tabuk"] },
+    ],
+  },
+  "singapore": {
+    label: "Singapore",
+    regionLabel: "Region",
+    regions: null,
+  },
+  "south-africa": {
+    label: "South Africa",
+    regionLabel: "Province",
+    regions: [
+      { name: "Gauteng", cities: ["Johannesburg", "Pretoria", "Soweto", "Sandton"] },
+      { name: "Western Cape", cities: ["Cape Town", "Stellenbosch", "George"] },
+      { name: "KwaZulu-Natal", cities: ["Durban", "Pietermaritzburg", "Richards Bay"] },
+      { name: "Eastern Cape", cities: ["Port Elizabeth", "East London"] },
+      { name: "Free State", cities: ["Bloemfontein"] },
+      { name: "Mpumalanga", cities: ["Nelspruit"] },
+    ],
+  },
+  "south-korea": {
+    label: "South Korea",
+    regionLabel: "Province / Special City",
+    regions: [
+      { name: "Seoul", cities: ["Seoul"] },
+      { name: "Busan", cities: ["Busan"] },
+      { name: "Incheon", cities: ["Incheon"] },
+      { name: "Daegu", cities: ["Daegu"] },
+      { name: "Gyeonggi", cities: ["Suwon", "Goyang", "Seongnam"] },
+      { name: "Jeju", cities: ["Jeju City"] },
+    ],
+  },
+  "spain": {
+    label: "Spain",
+    regionLabel: "Autonomous Community",
+    regions: [
+      { name: "Community of Madrid", cities: ["Madrid"] },
+      { name: "Catalonia", cities: ["Barcelona", "L'Hospitalet de Llobregat"] },
+      { name: "Andalusia", cities: ["Seville", "Málaga", "Cádiz"] },
+      { name: "Valencian Community", cities: ["Valencia", "Alicante"] },
+      { name: "Basque Country", cities: ["Bilbao", "San Sebastián"] },
+      { name: "Galicia", cities: ["Vigo", "A Coruña", "Santiago de Compostela"] },
+    ],
+  },
+  "thailand": {
+    label: "Thailand",
+    regionLabel: "Province",
+    regions: [
+        { name: "Bangkok", cities: ["Bangkok"] },
+        { name: "Chiang Mai", cities: ["Chiang Mai"] },
+        { name: "Phuket", cities: ["Phuket"] },
+        { name: "Chon Buri", cities: ["Pattaya", "Chon Buri"] },
+        { name: "Surat Thani", cities: ["Ko Samui"] },
+        { name: "Krabi", cities: ["Krabi"] },
+    ]
+  },
+  "turkey": {
+    label: "Turkey",
+    regionLabel: "Province",
+    regions: [
+      { name: "Istanbul", cities: ["Istanbul"] },
+      { name: "Ankara", cities: ["Ankara"] },
+      { name: "İzmir", cities: ["İzmir"] },
+      { name: "Antalya", cities: ["Antalya"] },
+      { name: "Bursa", cities: ["Bursa"] },
+      { name: "Adana", cities: ["Adana"] },
+    ],
+  },
+  "united-arab-emirates": {
+    label: "United Arab Emirates",
+    regionLabel: "Emirate",
+    regions: [
+      { name: "Dubai", cities: ["Dubai"] },
+      { name: "Abu Dhabi", cities: ["Abu Dhabi", "Al Ain"] },
+      { name: "Sharjah", cities: ["Sharjah"] },
+      { name: "Ajman", cities: ["Ajman"] },
+      { name: "Ras Al Khaimah", cities: ["Ras Al Khaimah"] },
+      { name: "Fujairah", cities: ["Fujairah"] },
+    ],
+  },
+  "united-kingdom": {
+    label: "United Kingdom",
+    regionLabel: "Country / Region",
+    regions: [
+      { name: "England - London", cities: ["London"] },
+      { name: "England - South East", cities: ["Brighton", "Canterbury", "Oxford", "Portsmouth", "Southampton", "Reading"] },
+      { name: "England - North West", cities: ["Manchester", "Liverpool", "Blackpool", "Chester"] },
+      { name: "England - West Midlands", cities: ["Birmingham", "Coventry", "Wolverhampton"] },
+      { name: "Scotland", cities: ["Glasgow", "Edinburgh", "Aberdeen", "Dundee"] },
+      { name: "Wales", cities: ["Cardiff", "Swansea", "Newport"] },
+      { name: "Northern Ireland", cities: ["Belfast", "Derry", "Lisburn"] },
+    ]
+  },
+  "united-states": {
+    label: "United States",
+    regionLabel: "State",
+    regions: [
+      { name: "California", cities: ["Los Angeles", "San Diego", "San Jose", "San Francisco", "Fresno", "Sacramento"] },
+      { name: "Texas", cities: ["Houston", "San Antonio", "Dallas", "Austin", "Fort Worth", "El Paso"] },
+      { name: "Florida", cities: ["Jacksonville", "Miami", "Tampa", "Orlando", "St. Petersburg", "Hialeah"] },
+      { name: "New York", cities: ["New York City", "Buffalo", "Rochester", "Yonkers", "Syracuse", "Albany"] },
+      { name: "Pennsylvania", cities: ["Philadelphia", "Pittsburgh", "Allentown", "Erie", "Reading"] },
+      { name: "Illinois", cities: ["Chicago", "Aurora", "Joliet", "Naperville", "Springfield"] },
+      { name: "Ohio", cities: ["Columbus", "Cleveland", "Cincinnati", "Toledo", "Akron", "Dayton"] },
+      { name: "Georgia", cities: ["Atlanta", "Augusta", "Columbus", "Macon", "Savannah"] },
+      { name: "North Carolina", cities: ["Charlotte", "Raleigh", "Greensboro", "Durham", "Winston-Salem"] },
+      { name: "Michigan", cities: ["Detroit", "Grand Rapids", "Warren", "Sterling Heights", "Ann Arbor"] },
+      { name: "Arizona", cities: ["Phoenix", "Tucson", "Mesa", "Chandler", "Scottsdale"] },
+      { name: "Washington", cities: ["Seattle", "Spokane", "Tacoma", "Vancouver", "Bellevue"] },
+    ],
+  },
+  "vietnam": {
+    label: "Vietnam",
+    regionLabel: "Province",
+    regions: [
+      { name: "Ho Chi Minh City", cities: ["Ho Chi Minh City"] },
+      { name: "Hanoi", cities: ["Hanoi"] },
+      { name: "Da Nang", cities: ["Da Nang"] },
+      { name: "Hai Phong", cities: ["Hai Phong"] },
+      { name: "Can Tho", cities: ["Can Tho"] },
+      { name: "Khanh Hoa", cities: ["Nha Trang"] },
+    ]
+  },
+  "default": {
+    label: "Other",
+    regionLabel: "State / Province / Region",
+    regions: null,
+  }
+};
